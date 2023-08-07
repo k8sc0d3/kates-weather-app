@@ -23,7 +23,7 @@ footer {
   color: grey;
 }
 .card {
-  max-width: 800px;
+  max-width: 650px;
   color: #f2f2f2;
   margin: 0 auto;
   display: grid;
@@ -38,11 +38,10 @@ footer {
 .today {
   font-size: 28px;
 }
-.location {
-  background-color: rgba(242, 242, 242, 0.25);
-}
+
 .location:hover {
   font-weight: bolder;
+  background-color: rgba(242, 242, 242, 0.25);
 }
 .temp {
   font-family: "Inter", sans-serif;
