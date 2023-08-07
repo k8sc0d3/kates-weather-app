@@ -52,10 +52,6 @@ footer {
   font-family: "Inter", sans-serif;
   font-size: 80px;
   font-weight: 800;
-  position: relative;
-  top: -25px;
-  display: flex;
-  align-items: center;
 }
 
 .extras {
