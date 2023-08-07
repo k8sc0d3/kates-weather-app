@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="SCPlusProject\src\style.css" />
   </head>
   <body>
-    <div class="container-sm p-3">
+    <div class="container-fluid p-3">
       <div class="card w-75 mx-auto">
         <div class="card-body py-3">
           <div class="row py-2 dateline">
@@ -35,87 +35,89 @@
             <div class="col-3 text-end" id="time">8:00PM AEST</div>
             <div class="col-sm-1"></div>
           </div>
-          <div class="row py-3">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-9 text-end today">
-              <b>Today</b> in
-              <span class="location" id="city">Melbourne</span>
-            </div>
-            <div class="col-sm-1"></div>
+          <h1 class="location">
+            <span id="city">Melbourne</span>,
+            <span id="country">Australia</span>
+          </h1>
+          <h2>
+            it is currently
+          </h2>
+
+          <div class="col-sm-1"></div>
+        </div>
+        <div class="row py-2">
+          <div class="col-sm-8 text-end">it is currently</div>
+          <div class="col-sm-2 text-end temp text-nowrap" id="curr-temp">
+            15
           </div>
-          <div class="row py-2">
-            <div class="col-sm-8 text-end">it is</div>
-            <div class="col-sm-2 text-end temp text-nowrap" id="curr-temp">
-              15
-            </div>
-            <div class="col-sm-2 tempc fs-6 text-start">
-              <a href="#" id="c-temp">C°</a>
-              |
-              <a href="#" id="f-temp">F</a>
-            </div>
+          <div class="col-sm-2 tempc fs-6 text-start">
+            <a href="#" id="c-temp">C°</a>
+            |
+            <a href="#" id="f-temp">F</a>
           </div>
-          <div class="row py-3 extras">
-            <div class="col-sm-9 text-end desc"><b>Description:</b></div>
-            <div class="col-sm-3 text-start data" id="temp-desc">Cloudy</div>
-            <div class="col-sm-9 text-end"><b>Humidity:</b></div>
-            <div class="col-sm-1 text-center data" id="rain">22</div>
-            <div class="col-sm-2 text-start">%</div>
-            <div class="col-sm-9 text-end"><b>Wind Speed:</b></div>
-            <div class="col-sm-1 text-center data" id="wind">9</div>
-            <div class="col-sm-2 text-start">km/h</div>
+        </div>
+        <div class="row py-3 extras">
+          <div class="col-sm-9 text-end desc"><b>Description:</b></div>
+          <div class="col-sm-3 text-start data" id="temp-desc">Cloudy</div>
+          <div class="col-sm-9 text-end"><b>Humidity:</b></div>
+          <div class="col-sm-1 text-center data" id="rain">22</div>
+          <div class="col-sm-2 text-start">%</div>
+          <div class="col-sm-9 text-end"><b>Wind Speed:</b></div>
+          <div class="col-sm-1 text-center data" id="wind">9</div>
+          <div class="col-sm-2 text-start">km/h</div>
+        </div>
+        <br />
+        <div class="row text-center">
+          <div class="col-sm">13</div>
+          <div class="col-sm">14</div>
+          <div class="col-sm">15</div>
+          <div class="col-sm">16</div>
+          <div class="col-sm">17</div>
+        </div>
+        <div class="row text-center days">
+          <div class="col-sm">Tuesday</div>
+          <div class="col-sm">Wednesday</div>
+          <div class="col-sm">Thursday</div>
+          <div class="col-sm">Friday</div>
+          <div class="col-sm">Saturday</div>
+        </div>
+        <div class="row text-center icons">
+          <div class="col-sm">
+            <i class="fa-solid fa-cloud-bolt icons"></i>
           </div>
-          <br />
-          <div class="row text-center">
-            <div class="col-sm">13</div>
-            <div class="col-sm">14</div>
-            <div class="col-sm">15</div>
-            <div class="col-sm">16</div>
-            <div class="col-sm">17</div>
+          <div class="col-sm"><i class="fa-solid fa-cloud icons"></i></div>
+          <div class="col-sm"><i class="fa-solid fa-cloud icons"></i></div>
+          <div class="col-sm">
+            <i class="fa-solid fa-cloud-sun icons"></i>
           </div>
-          <div class="row text-center days">
-            <div class="col-sm">Tuesday</div>
-            <div class="col-sm">Wednesday</div>
-            <div class="col-sm">Thursday</div>
-            <div class="col-sm">Friday</div>
-            <div class="col-sm">Saturday</div>
-          </div>
-          <div class="row text-center icons">
-            <div class="col-sm">
-              <i class="fa-solid fa-cloud-bolt icons"></i>
-            </div>
-            <div class="col-sm"><i class="fa-solid fa-cloud icons"></i></div>
-            <div class="col-sm"><i class="fa-solid fa-cloud icons"></i></div>
-            <div class="col-sm">
-              <i class="fa-solid fa-cloud-sun icons"></i>
-            </div>
-            <div class="col-sm"><i class="fa-solid fa-sun icons"></i></div>
-          </div>
-          <div class="row text-center data">
-            <div class="col-sm">18°C</div>
-            <div class="col-sm">20°C</div>
-            <div class="col-sm">17°C</div>
-            <div class="col-sm">16°C</div>
-            <div class="col-sm">15°C</div>
-          </div>
-          <br />
-          <div class="d-grid gap-2 col-10 mx-auto">
-            <form class="form-floating shadow-sm" id="search">
-              <input
-                type="text"
-                class="form-control"
-                id="location-form"
-                placeholder="Location"
-              />
-              <label for="floatingLocation">Enter a city...</label>
-            </form>
-            <button
-              type="button"
-              class="btn btn-secondary shadow-sm"
-              id="location-button"
-            >
-              🧭 Use my current location
-            </button>
-          </div>
+          <div class="col-sm"><i class="fa-solid fa-sun icons"></i></div>
+        </div>
+        <div class="row text-center data">
+          <div class="col-sm">18°C</div>
+          <div class="col-sm">20°C</div>
+          <div class="col-sm">17°C</div>
+          <div class="col-sm">16°C</div>
+          <div class="col-sm">15°C</div>
+        </div>
+        <br />
+        <div class="d-grid gap-2 col-10 mx-auto">
+          <form class="form-floating shadow-sm" id="search">
+            <input
+              type="text"
+              class="form-control"
+              id="location-form"
+              placeholder="Location"
+            />
+            <label for="floatingLocation">Enter a city...</label>
+          </form>
+          <button
+            type="button"
+            class="btn btn-secondary shadow-sm"
+            id="location-button"
+          >
+            🧭 Use my current location
+          </button>
+        </br>
         </div>
       </div>
     </div>
