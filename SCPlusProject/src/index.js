@@ -40,44 +40,50 @@ tDate.innerHTML = `${day}, ${date} ${month} ${year}`;
 tTime.innerHTML = `${hours}:${minutes}`;
 
 //Replace Farenheit
-
-function convertToF(event) {
+function displayFTemp(event) {
   event.preventDefault();
-  let ftemp = document.querySelector("#curr-temp");
-  //let ftemp = Math.round(temp * 1.8 + 32);
-  ftemp.innerHTML = 59;
+
+  let temperatureElement = document.querySelector("#curr-temp");
+  cLink.classList.remove("active");
+  fLink.classList.add("active");
+
+  let fValue = (cValue * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fValue);
 }
 
-let faren = document.querySelector("#f-temp");
-faren.addEventListener("click", convertToF);
-
-//Replace Celcius
-function convertToC(event) {
+function displayCTemp(event) {
   event.preventDefault();
-  let ctemp = document.querySelector("#curr-temp");
-  ctemp.innerHTML = 15;
+  let temperatureElement = document.querySelector("#curr-temp");
+  cLink.classList.add("active");
+  fLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(cValue);
 }
+let cValue = null;
 
-let celc = document.querySelector("#c-temp");
-celc.addEventListener("click", convertToC);
+let fLink = document.querySelector("#f-temp");
+fLink.addEventListener("click", displayFTemp);
+
+let cLink = document.querySelector("#c-temp");
+cLink.addEventListener("click", displayCTemp);
 
 // Search Bar
 
 function displayWeatherCondition(response) {
+  let cityElement = document.querySelector("#city");
+  let countryElement = document.querySelector("#country");
+  let temperatureElement = document.querySelector("#curr-temp");
+  let descriptionElement = document.querySelector("#temp-desc");
+  let celcTemp = response.data.temperature.current;
+  let humidityElement = document.querySelector("#rain");
+  let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
-  document.querySelector("#city").innerHTML = response.data.city;
-  document.querySelector("#country").innerHTML = response.data.country;
-  document.querySelector("#curr-temp").innerHTML = Math.round(
-    response.data.temperature.current
-  );
 
-  document.querySelector("#rain").innerHTML =
-    response.data.temperature.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#temp-desc").innerHTML =
-    response.data.condition.description;
+  temperatureElement.innerHTML = Math.round(celcTemp);
+  cityElement.innerHTML = response.data.city;
+  countryElement.innerHTML = response.data.country;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  descriptionElement.innerHTML = response.data.condition.description;
   iconElement.setAttribute(
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
@@ -87,7 +93,7 @@ function displayWeatherCondition(response) {
 
 function searchCity(city) {
   let apiKey = "7b92118f0463o637a71bc5b26ac0t299";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   //`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -104,9 +110,9 @@ search.addEventListener("submit", submit);
 function searchLocation(position) {
   let apiKey = "7b92118f0463o637a71bc5b26ac0t299";
   //"202e78c6847f13b8daaa5f378f2256eb";
-  let latitude = Math.round(position.coordinates.latitude);
-  let longitude = Math.round(position.coordinates.longitude);
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}}&key=${apiKey}`;
+  let lat = Math.round(position.coordinates.latitude);
+  let long = Math.round(position.coordinates.longitude);
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}}&key=${apiKey}&units=metric`;
   //`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
