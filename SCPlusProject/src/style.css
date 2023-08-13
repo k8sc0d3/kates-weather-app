@@ -34,7 +34,8 @@ footer {
 .card {
   max-width: 650px;
   color: #f2f2f2;
-  margin: 0 auto;
+  margin: 30px auto;
+  padding: 15px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   background: rgba(253, 253, 253, 0.25);
@@ -44,7 +45,9 @@ footer {
   font-size: 12px;
   font-family: "Inter", sans-serif;
 }
-
+.weather-temperature {
+  text-align: right;
+}
 .location:hover {
   font-weight: bolder;
 }

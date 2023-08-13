@@ -29,20 +29,23 @@
       <div class="card w-75 mx-auto">
         <div class="card-body py-3">
           <div class="row py-2 dateline">
-            <div class="col-sm-1"></div>
-            <div class="col-3" id="date">Monday, 12 June 2023</div>
-            <div class="col-4"></div>
-            <div class="col-3 text-end" id="time">8:00PM AEST</div>
-            <div class="col-sm-1"></div>
+  
+            <div class="col-6" id="date">Monday, 12 June 2023</div>
+        
+            <div class="col-6 text-end" id="time">8:00PM AEST</div>
+  
           </div>
           <h1 class="location">
             <span id="city">Melbourne</span>,
             <span id="country">Australia</span>
           </h1>
           <h2>
-            it is currently <span class="temp" id="curr-temp">15</span><a href="#" id="c-temp">C°</a>
-            |
-            <a href="#" id="f-temp">F</a>
+            <div class="d-flex weather-temperature">
+              it is currently
+            <img src="" alt="Clear" id="icon" />
+          <span class="temp" id="curr-temp">15</span>
+            <span class="units"> <a href="#" id="c-temp">C°</a><a href="#" id="f-temp">F</a></span>
+</div>
           </h2>
 
       
