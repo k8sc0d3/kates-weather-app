@@ -42,8 +42,9 @@ tTime.innerHTML = `${hours}:${minutes}`;
 //Replace Farenheit
 function displayFTemp(event) {
   event.preventDefault();
-  //cLink.classList.remove("active");
-  // fLink.classList.add("active");
+  //remove and add class list
+  cLink.classList.remove("active");
+  fLink.classList.add("active");
 
   let fValue = (cValue * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#curr-temp");
@@ -54,8 +55,8 @@ function displayFTemp(event) {
 function displayCTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#curr-temp");
-  //cLink.classList.add("active");
-  //fLink.classList.remove("active");
+  cLink.classList.add("active");
+  fLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(cValue);
 }
 let cValue = null;
@@ -66,7 +67,7 @@ fLink.addEventListener("click", displayFTemp);
 let cLink = document.querySelector("#c-temp");
 cLink.addEventListener("click", displayCTemp);
 
-//search("Melbourne");
+searchCity("Melbourne");
 
 // Search Bar
 
