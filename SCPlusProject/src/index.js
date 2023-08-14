@@ -42,20 +42,20 @@ tTime.innerHTML = `${hours}:${minutes}`;
 //Replace Farenheit
 function displayFTemp(event) {
   event.preventDefault();
-
-  let temperatureElement = document.querySelector("#curr-temp");
-  cLink.classList.remove("active");
-  fLink.classList.add("active");
+  //cLink.classList.remove("active");
+  // fLink.classList.add("active");
 
   let fValue = (cValue * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#curr-temp");
+  //alert(fValue);
   temperatureElement.innerHTML = Math.round(fValue);
 }
 
 function displayCTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#curr-temp");
-  cLink.classList.add("active");
-  fLink.classList.remove("active");
+  //cLink.classList.add("active");
+  //fLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(cValue);
 }
 let cValue = null;
@@ -66,6 +66,8 @@ fLink.addEventListener("click", displayFTemp);
 let cLink = document.querySelector("#c-temp");
 cLink.addEventListener("click", displayCTemp);
 
+//search("Melbourne");
+
 // Search Bar
 
 function displayWeatherCondition(response) {
@@ -73,12 +75,13 @@ function displayWeatherCondition(response) {
   let countryElement = document.querySelector("#country");
   let temperatureElement = document.querySelector("#curr-temp");
   let descriptionElement = document.querySelector("#temp-desc");
-  let celcTemp = response.data.temperature.current;
   let humidityElement = document.querySelector("#rain");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = Math.round(celcTemp);
+  cValue = response.data.temperature.current;
+
+  temperatureElement.innerHTML = Math.round(cValue);
   cityElement.innerHTML = response.data.city;
   countryElement.innerHTML = response.data.country;
   humidityElement.innerHTML = response.data.temperature.humidity;
@@ -110,8 +113,8 @@ search.addEventListener("submit", submit);
 function searchLocation(position) {
   let apiKey = "7b92118f0463o637a71bc5b26ac0t299";
   //"202e78c6847f13b8daaa5f378f2256eb";
-  let lat = Math.round(position.coordinates.latitude);
-  let long = Math.round(position.coordinates.longitude);
+  let lat = Math.round(position.data.coordinates.latitude);
+  let long = Math.round(position.data.coordinates.longitude);
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}}&key=${apiKey}&units=metric`;
   //`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 

@@ -48,6 +48,26 @@ footer {
 .weather-temperature {
   text-align: right;
 }
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: 14px;
+  padding-left: 10px;
+}
+
+.weather-temperature .active {
+  color: #f2f2f2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.weather-temperature .active:hover {
+  color: #f2f2f2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .location:hover {
   font-weight: bolder;
 }
@@ -66,6 +86,7 @@ footer {
 }
 .data {
   font-family: "Inter", sans-serif;
+  text-transform: capitalize;
 }
 .icons {
   font-size: 55px;
