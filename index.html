@@ -29,11 +29,9 @@
       <div class="card w-75 mx-auto">
         <div class="card-body py-3">
           <div class="row py-2 dateline">
-  
             <div class="col-6" id="date">Monday, 12 June 2023</div>
-        
+
             <div class="col-6 text-end" id="time">8:00PM AEST</div>
-  
           </div>
           <h1 class="location">
             <span id="city">Melbourne</span>,
@@ -41,13 +39,18 @@
           </h1>
           <h2>
             <div class="d-flex weather-temperature justify-content-end">
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt="Clear" id="icon" />
-          <span class="temp" id="curr-temp">15 </span>
-            <span class="units"> <a href="#" id="c-temp" class="active"> C°</a> | <a href="#" id="f-temp" class="active">F</a></span>
-          </div>
+              <img
+                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+                alt="Clear"
+                id="icon"
+              />
+              <span class="temp" id="curr-temp">15 </span>
+              <span class="units">
+                <a href="#" id="c-temp" class="active"> C°</a> |
+                <a href="#" id="f-temp" class="active">F</a></span
+              >
+            </div>
           </h2>
-
-      
         </div>
         <div class="row py-3 extras">
           <div class="col-sm-9 text-end desc"><b>Description:</b></div>
@@ -76,14 +79,35 @@
         </div>
         <div class="row text-center icons">
           <div class="col-sm">
-            <i class="fa-solid fa-cloud-bolt icons"></i>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+              alt="few-clouds-day"
+            />
           </div>
-          <div class="col-sm"><i class="fa-solid fa-cloud icons"></i></div>
-          <div class="col-sm"><i class="fa-solid fa-cloud icons"></i></div>
           <div class="col-sm">
-            <i class="fa-solid fa-cloud-sun icons"></i>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              alt="clear-sky-day"
+            />
           </div>
-          <div class="col-sm"><i class="fa-solid fa-sun icons"></i></div>
+          <div class="col-sm">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png"
+              alt="scattered-clouds-day"
+            />
+          </div>
+          <div class="col-sm">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+              alt="rain-day"
+            />
+          </div>
+          <div class="col-sm">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+              alt="clear-sky-day"
+            />
+          </div>
         </div>
         <div class="row text-center data">
           <div class="col-sm">18°C</div>
@@ -110,7 +134,7 @@
           >
             🧭 Use my current location
           </button>
-        </br>
+          <br />
         </div>
       </div>
     </div>
