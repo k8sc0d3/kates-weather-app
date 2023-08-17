@@ -112,13 +112,13 @@ let search = document.querySelector("#search");
 search.addEventListener("submit", submit);
 
 function searchLocation(position) {
+  console.log(position);
   let apiKey = "7b92118f0463o637a71bc5b26ac0t299";
   //"202e78c6847f13b8daaa5f378f2256eb";
-  let lat = Math.round(position.data.coordinates.latitude);
-  let long = Math.round(position.data.coordinates.longitude);
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}}&key=${apiKey}&units=metric`;
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}&key=${apiKey}&units=metric`;
   //`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
