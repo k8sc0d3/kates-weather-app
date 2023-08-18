@@ -46,7 +46,7 @@ footer {
   padding: 15px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  background: rgba(253, 253, 253, 0.25);
+  background: rgba(12, 12, 12, 0.25);
 }
 
 .dateline {
@@ -89,14 +89,34 @@ footer {
 .extras {
   font-family: "Inter", sans-serif;
 }
-.days {
+
+.forecast-days {
   font-weight: bolder;
   font-size: 16px;
 }
+
 .data {
   font-family: "Inter", sans-serif;
   text-transform: capitalize;
 }
+
+.forecast-temp {
+  font-family: "Inter", sans-serif;
+  text-transform: capitalize;
+}
+
+.forecast-day {
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.forecast-max {
+}
+
+.forecast-min {
+  color: rgba(242, 242, 242, 0.55);
+}
+
 .icons {
   font-size: 55px;
 }

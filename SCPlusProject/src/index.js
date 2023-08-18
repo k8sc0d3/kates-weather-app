@@ -68,8 +68,34 @@ let cLink = document.querySelector("#c-temp");
 cLink.addEventListener("click", displayCTemp);
 
 searchCity("Melbourne");
+displayForecast();
 
-// Search Bar
+// Temperature and Forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row text-center">`;
+  let days = [`Sat`, `Sun`, `Mon`, `Tues`];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-sm">
+            <span class="forecast-date">13</span>
+            <div class="forecast-day">${day}</div>
+            <img
+              class="icons"
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+              alt="few-clouds-day"
+            />
+            <div class="forecast-temp">
+              <span class="forecast-max">18°C |</span>
+              <span class="forecast-min"> 10°C </span>
+            </div> </div>`;
+  }),
+    (forecastHTML = forecastHTML + `</div>`);
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function displayWeatherCondition(response) {
   let cityElement = document.querySelector("#city");
@@ -94,6 +120,7 @@ function displayWeatherCondition(response) {
   );
   iconElement.setAttribute("alt", response.data.description);
 }
+// Search Bar
 
 function searchCity(city) {
   let apiKey = "7b92118f0463o637a71bc5b26ac0t299";
