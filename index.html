@@ -25,10 +25,10 @@
     <link rel="stylesheet" href="SCPlusProject\src\style.css" />
   </head>
   <body>
-    <div class="container-md">
-      <div class="card w-75 mx-auto">
-        <div class="card-body py-3">
-          <div class="row py-2 dateline">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="row dateline">
             <div class="col-6" id="date">Monday, 12 June 2023</div>
 
             <div class="col-6 text-end" id="time">8:00PM AEST</div>
@@ -54,10 +54,14 @@
         </div>
         <div class="row py-3 extras">
           <div class="col-sm-9 text-end desc"><b>Description:</b></div>
-          <div class="col-sm-3 text-start data" id="temp-desc">Cloudy</div>
-          <div class="col-sm-9 text-end"><b>Humidity:</b></div>
-          <div class="col-sm-1 text-center data" id="rain">22</div>
-          <div class="col-sm-2 text-start">%</div>
+          <div class="col text-start data" id="temp-desc">Cloudy</div>
+
+          <div class="row">
+            <div class="col-sm-9 text-end"><b>Humidity:</b></div>
+            <div class="col-sm-1 text-center data" id="rain">22</div>
+            <div class="col-sm-2 text-start">%</div>
+          </div>
+
           <div class="col-sm-9 text-end"><b>Wind Speed:</b></div>
           <div class="col-sm-1 text-center data" id="wind">9</div>
           <div class="col-sm-2 text-start">km/h</div>

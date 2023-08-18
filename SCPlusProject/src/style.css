@@ -31,11 +31,16 @@ footer {
   font-size: 7pt;
   color: grey;
 }
+
+.container {
+  max-width: 600px;
+  min-width: 545px;
+}
+
 .icons {
   max-width: 65px;
 }
 .card {
-  max-width: 600px;
   color: #f2f2f2;
   margin: 30px auto;
   padding: 15px;
@@ -46,6 +51,7 @@ footer {
 
 .dateline {
   font-size: 12px;
+  padding-bottom: 15px;
   font-family: "Inter", sans-serif;
 }
 .weather-temperature {
