@@ -52,20 +52,17 @@
             </div>
           </h2>
         </div>
-        <div class="row py-3 extras">
-          <div class="col-sm-9 text-end desc"><b>Description:</b></div>
-          <div class="col text-start data" id="temp-desc">Cloudy</div>
+        <ul class="extras">
+          <b>
+            <li>Description:</li>
+            <li>Humidity:</li>
+            <li>Wind Speed:</li></b
+          >
+          <li><span class="data" id="temp-desc">Cloudy</span></li>
+          <li><span id="rain"> </span> %</li>
+          <li><span id="wind"> </span> km/h</li>
+        </ul>
 
-          <div class="row">
-            <div class="col-sm-9 text-end"><b>Humidity:</b></div>
-            <div class="col-sm-1 text-center data" id="rain">22</div>
-            <div class="col-sm-2 text-start">%</div>
-          </div>
-
-          <div class="col-sm-9 text-end"><b>Wind Speed:</b></div>
-          <div class="col-sm-1 text-center data" id="wind">9</div>
-          <div class="col-sm-2 text-start">km/h</div>
-        </div>
         <br />
         <div class="weather-forecast" id="forecast"></div>
 

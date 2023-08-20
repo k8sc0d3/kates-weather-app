@@ -15,6 +15,17 @@ h2 {
   font-weight: 200;
   text-align: right;
 }
+ul {
+  display: block;
+  columns: 2;
+  list-style: none;
+  margin: 0;
+  padding-left: 17rem;
+}
+
+li {
+  margin: 0;
+}
 a {
   color: #f2f2f2;
 }
@@ -26,10 +37,12 @@ label {
 
 footer {
   color: #f2f2f2;
+  font-weight: 500;
   font-family: "Inter", sans-serif;
   text-align: center;
   font-size: 7pt;
-  color: grey;
+
+  padding-bottom: 2rem;
 }
 
 .container {
@@ -46,7 +59,7 @@ footer {
   padding: 15px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  background: rgba(12, 12, 12, 0.25);
+  background: rgba(12, 12, 12, 0.45);
 }
 
 .dateline {
