@@ -20,7 +20,11 @@ ul {
   columns: 2;
   list-style: none;
   margin: 0;
-  padding-left: 17rem;
+  padding-left: 20rem;
+  padding-bottom: 1rem;
+}
+
+ul.extras {
 }
 
 li {
@@ -42,7 +46,7 @@ footer {
   text-align: center;
   font-size: 7pt;
 
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 .container {
@@ -93,6 +97,11 @@ footer {
 .location:hover {
   font-weight: bolder;
 }
+
+.country {
+  font-weight: lighter;
+}
+
 .temp {
   font-family: "Inter", sans-serif;
   font-size: 80px;
@@ -101,6 +110,7 @@ footer {
 
 .extras {
   font-family: "Inter", sans-serif;
+  font-size: smaller;
 }
 
 .forecast-days {

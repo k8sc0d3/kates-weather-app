@@ -94,7 +94,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row text-center">`;
   //let days = [`Sat`, `Sun`, `Mon`, `Tues`, `Wed`];
   forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 4) {
       forecastHTML =
         forecastHTML +
         `
@@ -111,10 +111,10 @@ function displayForecast(response) {
             <div class="forecast-temp">
               <span class="forecast-max">${Math.round(
                 forecastDay.temperature.maximum
-              )} |</span>
+              )}° |</span>
               <span class="forecast-min"> ${Math.round(
                 forecastDay.temperature.minimum
-              )} </span>
+              )}°</span>
             </div> </div>`;
     }
   });
