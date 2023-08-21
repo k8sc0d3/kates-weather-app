@@ -40,32 +40,32 @@ tDate.innerHTML = `${day}, ${date} ${month} ${year}`;
 tTime.innerHTML = `${hours}:${minutes}`;
 
 //Replace Farenheit
-function displayFTemp(event) {
-  event.preventDefault();
-  //remove and add class list
-  cLink.classList.remove("active");
-  fLink.classList.add("active");
+//function displayFTemp(event) {
+//event.preventDefault();
+//remove and add class list
+//cLink.classList.remove("active");
+// fLink.classList.add("active");
 
-  let fValue = (cValue * 9) / 5 + 32;
-  let temperatureElement = document.querySelector("#curr-temp");
-  //alert(fValue);
-  temperatureElement.innerHTML = Math.round(fValue);
-}
+// let fValue = (cValue * 9) / 5 + 32;
+// let temperatureElement = document.querySelector("#curr-temp");
+//alert(fValue);
+// temperatureElement.innerHTML = Math.round(fValue);
+//}
 
 function displayCTemp(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#curr-temp");
-  cLink.classList.add("active");
-  fLink.classList.remove("active");
+  //cLink.classList.add("active");
+  //fLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(cValue);
 }
 let cValue = null;
 
-let fLink = document.querySelector("#f-temp");
-fLink.addEventListener("click", displayFTemp);
+//let fLink = document.querySelector("#f-temp");
+//fLink.addEventListener("click", displayFTemp);
 
-let cLink = document.querySelector("#c-temp");
-cLink.addEventListener("click", displayCTemp);
+//let cLink = document.querySelector("#c-temp");
+//cLink.addEventListener("click", displayCTemp);
 
 searchCity("Melbourne");
 
